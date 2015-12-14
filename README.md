@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/exoscale.svg)](https://badge.fury.io/rb/exoscale)
+
 # Ruby Exoscale
 
 Simple Ruby gem to access Exoscale's API
