@@ -35,7 +35,15 @@ puts exo.list_virtual_machines
 
 ### DNS
 
-To do...
+```
+require 'exoscale'
+exo = Exoscale::Compute.new(ENV['EXO_API_KEY'], ENV['EXO_API_SECRET_KEY'])
+puts exo.list_domains
+puts exo.create_domain('example.com')
+puts exo.create_record('example.com', 'www', 'A', '1.2.3.4')
+
+```
+
 
 ### Apps
 
