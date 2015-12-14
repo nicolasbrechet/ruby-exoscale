@@ -53,7 +53,6 @@ module Exoscale
       
       response = http.request(request)
       return JSON.parse(response.body)
-      
     end
     
     #### VIRTUAL MACHINES

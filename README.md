@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/exoscale.svg)](https://badge.fury.io/rb/exoscale)
+[![Gem Version](https://badge.fury.io/rb/exoscale.svg)](https://badge.fury.io/rb/exoscale) [![Build Status](https://travis-ci.org/nicolasbrechet/ruby-exoscale.svg)](https://travis-ci.org/nicolasbrechet/ruby-exoscale)
 
 # Ruby Exoscale
 
@@ -22,10 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-All methods are described on [Exoscale's documentation](https://community.exoscale.ch/api/). As this is a Ruby gem, all methods are snake_cased. 
 
 
 ### Compute
+
+All methods are described on [Exoscale's Compute documentation](https://community.exoscale.ch/api/compute/). As this is a Ruby gem, all methods are snake_cased. 
+
 ```
 require 'exoscale'
 exo = Exoscale::Compute.new(ENV['EXO_API_KEY'], ENV['EXO_API_SECRET_KEY'])
@@ -55,8 +57,7 @@ To do...
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 

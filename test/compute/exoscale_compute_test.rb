@@ -1,11 +1,10 @@
 require 'test_helper'
 
 class ExoscaleComputeTest < Minitest::Test
-  
-  @api_key = "CC1C500-AB5E-481D-B1AF-8617176F314C" # Not a real api key
-  @api_secret = "1D2A9F5-A69A-4E89-82E2-B2FA5EEDDE71" # Not a real api secret
-  
+
   def setup
+    @api_key = ENV['EXO_API_KEY']
+    @api_secret = ENV['EXO_SECRET_KEY']
     @exo = Exoscale::Compute.new(@api_key, @api_secret)
   end
   
@@ -21,4 +20,19 @@ class ExoscaleComputeTest < Minitest::Test
     assert_equal @exo.api_endpoint, ::Exoscale::COMPUTE_ENDPOINT
   end
   
+  def test_that_it_escapes_strings
+    string_to_escape = "'`!? %"
+    assert_equal @exo.escape(string_to_escape), "%27%60%21%3F%20%25"    
+  end
+  
+  def test_that_it_generates_url
+    parameter_hash = {"command" => "deployVirtualMachine"}
+    generated_url = "https://api.exoscale.ch:443/compute?apiKey=#{@api_key.to_s}&command=deployVirtualMachine&response=json&signature=vQepdye4Yt9ZOPBwCuKPSt2dJjQ%3D"
+    assert_equal @exo.generate_url(parameter_hash).to_s, generated_url.to_s
+  end
+  
+  def test_that_it_executes_request
+    params = {'command' => 'listAccounts'}
+    assert_equal @exo.execute_request(@exo.generate_url( params ))["listaccountsresponse"]["account"].first["user"].first["secretkey"], @api_secret
+  end
 end
