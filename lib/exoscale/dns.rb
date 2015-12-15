@@ -38,8 +38,6 @@ module Exoscale
         request.body = data.to_json unless data.nil?
       end
       
-      puts uri
-      puts request.to_s
       response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') {|http|
         http.request(request)
       }
