@@ -1,3 +1,8 @@
+# 0.3.1 (2016-02-12)
+
+Compute API:
+Added list_volumes (not showed on Exoscale's API documentation)
+
 # 0.3.0 (2016-02-12)
 
 Compute API:
