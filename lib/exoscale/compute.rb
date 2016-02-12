@@ -414,5 +414,18 @@ module Exoscale
       
     end
     
+    #### VOLUMES
+    
+    def list_volumes(paramHash = {})
+      # GET /listVolumes
+      # List available volumes
+      # http://cloudstack.apache.org/api/apidocs-4.4/user/listVolumes.html
+      
+      params = {'command' => 'listVolumes'}
+      params.merge!(paramHash) unless paramHash.nil?
+      
+      execute_request(generate_url( params ))
+    end
+    
   end
 end
