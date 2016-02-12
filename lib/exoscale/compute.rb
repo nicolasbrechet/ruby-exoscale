@@ -372,5 +372,47 @@ module Exoscale
       execute_request(generate_url( params ))
     end
     
+    #### SNAPSHOTS
+    
+    def create_snapshot(volume_id, paramHash = {})
+      # GET /createSnapshot
+      # Creates a snapshot
+      
+      params = {'command' => 'createSnapshot', 'volumeid' => volume_id}
+      params.merge!(paramHash) unless paramHash.nil?
+      
+      execute_request(generate_url( params ))
+    end
+    
+    def list_snapshots(paramHash = {})
+      # GET /listSnapshots
+      # List available snapshots
+      
+      params = {'command' => 'listSnapshots'}
+      params.merge!(paramHash) unless paramHash.nil?
+      
+      execute_request(generate_url( params ))
+    end
+    
+    def delete_snapshot(id)
+      # GET /deleteSnapshot
+      # Deletes a snapshot
+      
+      params = {'command' => 'listSnapshots', 'id' => id}
+      
+      execute_request(generate_url( params ))
+      
+    end
+    
+    def revert_snapshot(id)
+      # GET /revertSnapshot
+      # Reverts a snapshot
+      
+      params = {'command' => 'revertSnapshot', 'id' => id}
+      
+      execute_request(generate_url( params ))
+      
+    end
+    
   end
 end
