@@ -169,7 +169,7 @@ module Exoscale
       execute_request(generate_url( params ))
     end
     
-    def authorize_security_group_ingress
+    def authorize_security_group_ingress(paramHash = {})
       # GET /authorizeSecurityGroupIngress
       # Authorizes a particular ingress rule for this security group
       
@@ -189,7 +189,7 @@ module Exoscale
       execute_request(generate_url( params ))
     end
     
-    def authorize_security_group_egress
+    def authorize_security_group_egress(paramHash = {})
       # GET /authorizeSecurityGroupEgress
       # Authorizes a particular egress rule for this security group
       
