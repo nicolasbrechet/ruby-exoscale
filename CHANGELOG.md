@@ -1,3 +1,8 @@
+# 0.3.2 (2016-10-03)
+
+Compute API:
+Fixed creation of Security Groups rules.
+
 # 0.3.1 (2016-02-12)
 
 Compute API:

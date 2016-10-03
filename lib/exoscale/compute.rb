@@ -21,7 +21,7 @@ module Exoscale
     
     def escape(string)
       string = CGI::escape(string)
-      string = string.gsub("+","%20")
+      string = string.gsub(/\+|\ /, "%20")
       string
     end
         
@@ -33,7 +33,7 @@ module Exoscale
       
       params.sort.each do |key, value|
         value = self.escape(value.to_s)
-        param_array << key.to_s + '=' + value.gsub('+', '%20').gsub(' ', '%20')
+        param_array << key.to_s + '=' + value.gsub(/\+|\ /, "%20")#.gsub(' ', '%20')
       end
 
       data = param_array.join('&')
