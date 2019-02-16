@@ -1,3 +1,8 @@
+# 0.3.3 (2019-02-16)
+
+Compute API:
+Fix deletion of snapshots, thanks to Simon Hürlimann (@huerlisi)
+
 # 0.3.2 (2016-10-03)
 
 Compute API:
