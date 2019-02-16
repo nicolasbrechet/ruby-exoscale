@@ -398,7 +398,7 @@ module Exoscale
       # GET /deleteSnapshot
       # Deletes a snapshot
       
-      params = {'command' => 'listSnapshots', 'id' => id}
+      params = {'command' => 'deleteSnapshot', 'id' => id}
       
       execute_request(generate_url( params ))
       
